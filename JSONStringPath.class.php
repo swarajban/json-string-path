@@ -85,7 +85,7 @@ class JSONStringPath {
 			return array_pop($operandStack);
 		}
 		else{
-			ErrorManager::error_log("Operand stack length != 1 at end of postfix expression. Length: " . $stackLength);
+			error_log("Operand stack length != 1 at end of postfix expression. Length: " . $stackLength);
 			return '';
 		}
 	}
@@ -211,7 +211,7 @@ class JSONStringPath {
 				}
 			}
 			else{
-				ErrorManager::error_log("Could not find first key in json string: " . $first);
+				error_log("Could not find first key in json string: " . $first);
 				break;
 			}
 		}
@@ -456,7 +456,7 @@ class JSONStringPath {
 				return array($firstOperand, $matches[2]);
 			}
 			else{
-				ErrorManager::error_log("Could not match first operand in postfix expression: " . $postfixExpression);
+				error_log("Could not match first operand in postfix expression: " . $postfixExpression);
 				return array('', '');
 			}
 		}
